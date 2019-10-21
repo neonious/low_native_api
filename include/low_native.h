@@ -12,14 +12,14 @@ extern "C" {
 
 typedef duk_context low_context;
 
-enum low_thread_type
+typedef enum
 {
     LOW_THREAD_CODE,
     LOW_THREAD_WORKER_FAST,
     LOW_THREAD_WORKER_SLOW
-};
+} low_thread_type;
 
-int module_main(low_context *ctx);
+__attribute__ ((visibility ("default"))) int module_main(low_context *ctx);
 
 int low_add_stash(low_context *ctx, int index);
 void low_remove_stash(low_context *ctx, int index);

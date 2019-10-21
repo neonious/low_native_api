@@ -2,14 +2,12 @@ UNAME_S := $(shell uname -s)
 
 ifeq ($(UNAME_S),Darwin)
 
-all: lib/liblow_native.dylib
+error:
+	echo "Cannot compile on Mac OS X as Mac OS X cannot build ELF files. Please compile on Linux."
 
 endif
-ifeq ($(UNAME_S),Linux)
 
 all: lib/liblow_native.so
-
-endif
 
 esp32: lib/liblow_native.esp32.so
 
@@ -21,6 +19,3 @@ lib/liblow_native.so: src/stub.c
 
 lib/liblow_native.esp32.so: src/stub.c
 	~/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc -shared -fPIC -o lib/liblow_native.esp32.so src/stub.c -fno-builtin -nostdlib
-
-lib/liblow_native.dylib: src/stub.c
-	gcc -shared -fPIC -o lib/liblow_native.dylib src/stub.c -fno-builtin -nostdlib
