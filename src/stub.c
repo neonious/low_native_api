@@ -25,7 +25,7 @@ void opendir() {}
 void readdir() {}
 void closedir() {}
 
-void low_call_direct();
+void low_call_direct() {}
 
 void low_add_stash() {}
 void low_remove_stash() {}
@@ -50,23 +50,21 @@ void duk_decode_string() {}
 void duk_def_prop() {}
 void duk_del_prop() {}
 void duk_del_prop_index() {}
-void duk_del_prop_literal() {}
+void duk_del_prop_literal_raw() {}
 void duk_del_prop_lstring() {}
 void duk_del_prop_string() {}
 void duk_dup() {}
 void duk_dup_top() {}
 void duk_enum() {}
 void duk_equals() {}
-void duk_error() {}
+void duk_error_raw() {}
 void duk_freeze() {}
-void duk_generic_error() {}
 void duk_get_boolean() {}
 void duk_get_boolean_default() {}
 void duk_get_buffer_data() {}
 void duk_get_buffer_data_default() {}
 void duk_get_c_function() {}
 void duk_get_c_function_default() {}
-void duk_get_error_code() {}
 void duk_get_finalizer() {}
 void duk_get_int() {}
 void duk_get_int_default() {}
@@ -81,7 +79,7 @@ void duk_get_pointer_default() {}
 void duk_get_prop() {}
 void duk_get_prop_desc() {}
 void duk_get_prop_index() {}
-void duk_get_prop_literal() {}
+void duk_get_prop_literal_raw() {}
 void duk_get_prop_lstring() {}
 void duk_get_prop_string() {}
 void duk_get_prototype() {}
@@ -95,7 +93,7 @@ void duk_get_uint() {}
 void duk_get_uint_default() {}
 void duk_has_prop() {}
 void duk_has_prop_index() {}
-void duk_has_prop_literal() {}
+void duk_has_prop_literal_raw() {}
 void duk_has_prop_lstring() {}
 void duk_has_prop_string() {}
 void duk_hex_decode() {}
@@ -108,25 +106,15 @@ void duk_is_buffer_data() {}
 void duk_is_c_function() {}
 void duk_is_constructable() {}
 void duk_is_constructor_call() {}
-void duk_is_error() {}
-void duk_is_eval_error() {}
 void duk_is_function() {}
 void duk_is_nan() {}
 void duk_is_null() {}
-void duk_is_null_or_undefined() {}
 void duk_is_number() {}
 void duk_is_object() {}
-void duk_is_object_coercible() {}
 void duk_is_pointer() {}
-void duk_is_primitive() {}
-void duk_is_range_error() {}
-void duk_is_reference_error() {}
 void duk_is_string() {}
 void duk_is_symbol() {}
-void duk_is_syntax_error() {}
-void duk_is_type_error() {}
 void duk_is_undefined() {}
-void duk_is_uri_error() {}
 void duk_is_valid_index() {}
 void duk_join() {}
 void duk_json_decode() {}
@@ -143,10 +131,10 @@ void duk_push_array() {}
 void duk_push_boolean() {}
 void duk_push_c_function() {}
 void duk_push_current_function() {}
-void duk_push_error_object() {}
+void duk_push_error_object_raw() {}
 void duk_push_false() {}
 void duk_push_int() {}
-void duk_push_literal() {}
+void duk_push_literal_raw() {}
 void duk_push_lstring() {}
 void duk_push_nan() {}
 void duk_push_new_target() {}
@@ -165,12 +153,10 @@ void duk_put_function_list() {}
 void duk_put_number_list() {}
 void duk_put_prop() {}
 void duk_put_prop_index() {}
-void duk_put_prop_literal() {}
+void duk_put_prop_literal_raw() {}
 void duk_put_prop_lstring() {}
 void duk_put_prop_string() {}
 void duk_random() {}
-void duk_range_error() {}
-void duk_reference_error() {}
 void duk_remove() {}
 void duk_replace() {}
 void duk_samevalue() {}
@@ -183,8 +169,7 @@ void duk_strict_equals() {}
 void duk_substring() {}
 void duk_swap() {}
 void duk_swap_top() {}
-void duk_syntax_error() {}
-void duk_throw() {}
+void duk_throw_raw() {}
 void duk_time_to_components() {}
 void duk_to_boolean() {}
 void duk_to_int() {}
@@ -201,5 +186,3 @@ void duk_to_uint16() {}
 void duk_to_uint32() {}
 void duk_to_undefined() {}
 void duk_trim() {}
-void duk_type_error() {}
-void duk_uri_error() {}
