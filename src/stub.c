@@ -1,7 +1,19 @@
+// -----------------------------------------------------------------------------
+//  stub.c - defines symbols for low_native stub library
+// -----------------------------------------------------------------------------
+
 void malloc() {}
 void calloc() {}
 void realloc() {}
 void free() {}
+
+void memcmp() {}
+void memcpy() {}
+void memmove() {}
+void memset() {}
+
+void strcpy() {}
+void sprintf() {}
 
 void open() {}
 void creat() {}
