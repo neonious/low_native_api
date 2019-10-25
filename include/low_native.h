@@ -19,7 +19,13 @@ typedef enum
     LOW_THREAD_WORKER_SLOW
 } low_thread_type;
 
-__attribute__ ((visibility ("default"))) int module_main(low_context *ctx);
+__attribute__ ((visibility ("default"))) int module_main(low_context *ctx, const char *module_path);
+
+void low_call_direct(low_context *ctx, low_thread_type thread, void (*func)(void *userdata), void *userdata);
+low_thread_type low_current_thread_type(low_context *ctx);
+
+int low_set_timeout(low_context *ctx, int index, int delay, void (*call)(void *data), void *data);
+void low_clear_timeout(low_context *ctx, int index);
 
 int low_add_stash(low_context *ctx, int index);
 void low_remove_stash(low_context *ctx, int index);
@@ -27,9 +33,6 @@ void low_push_stash(low_context *ctx, int index, bool remove);
 
 void *low_push_buffer(low_context *ctx, int len);
 void low_call_next_tick(low_context *ctx, int num_args);
-
-void low_call_direct(low_context *ctx, low_thread_type thread, void (*func)(void *userdata), void *userdata);
-low_thread_type low_current_thread_type(low_context *ctx);
 
 #ifdef __cplusplus
 }

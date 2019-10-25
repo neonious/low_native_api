@@ -27,6 +27,9 @@ void closedir() {}
 
 void low_call_direct() {}
 
+void low_set_timeout() {}
+void low_clear_timeout() {}
+
 void low_add_stash() {}
 void low_remove_stash() {}
 void low_push_stash() {}
