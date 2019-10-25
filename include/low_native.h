@@ -1,3 +1,6 @@
+// -----------------------------------------------------------------------------
+//  low_native.h - native module API which does not belong to stdlib or DukTape
+// -----------------------------------------------------------------------------
 
 #ifndef __LOW_NATIVE_H__
 #define __LOW_NATIVE_H__
