@@ -24,6 +24,9 @@ typedef enum
 
 __attribute__ ((visibility ("default"))) int module_main(low_context *ctx, const char *module_path);
 
+// Typically, in a native module parent_on_stack will be false
+void low_load_module(low_context *ctx, const char *path, bool parent_on_stack);
+
 void low_call_direct(low_context *ctx, low_thread_type thread, void (*func)(void *userdata), void *userdata);
 low_thread_type low_current_thread_type(low_context *ctx);
 

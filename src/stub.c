@@ -37,6 +37,8 @@ void opendir() {}
 void readdir() {}
 void closedir() {}
 
+void low_load_module();
+
 void low_call_direct() {}
 
 void low_set_timeout() {}
