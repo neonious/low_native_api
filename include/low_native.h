@@ -7,11 +7,9 @@
 
 #include "duktape.h"
 
+#include <stdlib.h>
+#include <stddef.h>
 #include <stdbool.h>
-
-#ifdef __cplusplus
-extern "C" {
-#endif /* __cplusplus */
 
 typedef duk_context low_context;
 
@@ -21,6 +19,10 @@ typedef enum
     LOW_THREAD_WORKER_FAST,
     LOW_THREAD_WORKER_SLOW
 } low_thread_type;
+
+#ifdef __cplusplus
+extern "C" {
+#endif /* __cplusplus */
 
 __attribute__ ((visibility ("default"))) int module_main(low_context *ctx, const char *module_path);
 
@@ -40,8 +42,18 @@ void low_push_stash(low_context *ctx, int index, bool remove);
 void *low_push_buffer(low_context *ctx, int len);
 void low_call_next_tick(low_context *ctx, int num_args);
 
+void *low_alloc_throw(low_context *ctx, size_t size);
+
 #ifdef __cplusplus
 }
+#endif /* __cplusplus */
+
+#ifdef __cplusplus
+inline void *operator new(size_t size, low_context *ctx)            { return low_alloc_throw(ctx, size); }
+inline void *operator new[](size_t size, low_context *ctx)          { return low_alloc_throw(ctx, size); }
+
+inline void operator delete(void *ptr, low_context *ctx)            { free(ptr); }
+inline void operator delete[](void *ptr, low_context *ctx)          { free(ptr); }
 #endif /* __cplusplus */
 
 #endif /* __LOW_NATIVE_H__ */
