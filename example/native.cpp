@@ -2,7 +2,7 @@
 //  native.c
 // -----------------------------------------------------------------------------
 
-#include "low_native.h"
+#include "low.h"
 #include "duktape.h"
 
 

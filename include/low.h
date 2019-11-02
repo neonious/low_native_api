@@ -1,9 +1,9 @@
 // -----------------------------------------------------------------------------
-//  low_native.h - native module API which does not belong to stdlib or DukTape
+//  low.h - native module API which does not belong to stdlib or DukTape
 // -----------------------------------------------------------------------------
 
-#ifndef __LOW_NATIVE_H__
-#define __LOW_NATIVE_H__
+#ifndef __LOW_H__
+#define __LOW_H__
 
 #include "duktape.h"
 
@@ -42,6 +42,7 @@ void low_remove_stash(low_context *ctx, int index);
 void low_push_stash(low_context *ctx, int index, bool remove);
 
 void *low_push_buffer(low_context *ctx, int len);
+void low_push_error(duk_context *ctx, int errno, const char *syscall);
 
 void *low_alloc_throw(low_context *ctx, size_t size);
 
@@ -57,4 +58,4 @@ inline void operator delete(void *ptr, low_context *ctx)            { free(ptr);
 inline void operator delete[](void *ptr, low_context *ctx)          { free(ptr); }
 #endif /* __cplusplus */
 
-#endif /* __LOW_NATIVE_H__ */
+#endif /* __LOW_H__ */
