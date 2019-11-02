@@ -17,7 +17,7 @@ typedef enum
 {
     LOW_THREAD_CODE,
     LOW_THREAD_WORKER,
-    LOW_THREAD_SOCKET
+    LOW_THREAD_IMMEDIATE
 } low_thread;
 
 #ifdef __cplusplus
@@ -29,8 +29,7 @@ __attribute__ ((visibility ("default"))) bool module_unload();
 
 void low_load_module(low_context *ctx, const char *path, bool parent_on_stack);
 
-void low_call_thread(low_context *ctx, low_thread thread, bool less_priority, void (*func)(void *userdata), void *userdata);
-void low_set_socket_events(low_context *ctx, int events, void (*func)(void *userdata), void *userdata);
+void low_call_thread(low_context *ctx, low_thread thread, int priority, void (*func)(void *userdata), void *userdata);
 low_thread low_get_current_thread(low_context *ctx);
 
 int low_set_timeout(low_context *ctx, int index, int delay, void (*call)(void *data), void *data);
