@@ -1,4 +1,0 @@
-This repository holds the library low.js native modules need to link to.
-
-An example on how to use can be found at:
-https://github.com/neonious/lowjs/tree/master/examples/native
