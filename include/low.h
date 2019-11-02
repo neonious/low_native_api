@@ -42,7 +42,7 @@ void low_remove_stash(low_context *ctx, int index);
 void low_push_stash(low_context *ctx, int index, bool remove);
 
 void *low_push_buffer(low_context *ctx, int len);
-void low_push_error(duk_context *ctx, int errno, const char *syscall);
+void low_push_error(duk_context *ctx, int error, const char *syscall);
 
 void *low_alloc_throw(low_context *ctx, size_t size);
 
