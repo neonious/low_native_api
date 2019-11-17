@@ -1,0 +1,3 @@
+These are the standard linker scripts as outputted by ld --verbose,
+modified to add 4 bytes after .eh_frame, so low.js can terminate
+.eh_frame before sending it to register_frame().

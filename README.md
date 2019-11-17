@@ -1,17 +1,37 @@
-Example using a native module:
+# low_native_api
 
+API for native modules in low.js
+
+
+## Example using a native module:
+
+### ON ESP32 MICROCONTROLLER
 
 Step 1: Compile the native module:
 
 cd example
+make clean
+make esp32
+
+
+Step 2:
+
+Copy index.js and native.so (compiled in Step 1) to microcontroller
+via lowsync or neonious IDE and run!
+
+
+### ON PC
+
+Step 1: Compile the native module:
+
+cd example
+make clean
 make
 
 
-Step 4: Run low.js script:
+Step 2: Run low.js script:
 
 low index.js
-
-
 
 To see what is happening, take a look at index.js. It loads native.so which
 is compiled from native.cpp by the Makefile.

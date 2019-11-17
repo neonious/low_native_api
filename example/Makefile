@@ -22,9 +22,9 @@ esp32: C = ~/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc
 esp32: CXX = ~/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++
 esp32: LD = ~/esp/xtensa-esp32-elf/bin/xtensa-esp32-elf-ld
 
-esp32: CFLAGS = $(FLAGS) -I../include -DDUK_F_32BIT_PTRS
-esp32: CXXFLAGS = $(FLAGS) -I../include -DDUK_F_32BIT_PTRS
-esp32: LDFLAGS = $(FLAGS) -shared
+esp32: CFLAGS = $(FLAGS) -I../include -DDUK_F_32BIT_PTRS -mlongcalls -mfix-esp32-psram-cache-issue
+esp32: CXXFLAGS = $(FLAGS) -I../include -DDUK_F_32BIT_PTRS -mlongcalls -mfix-esp32-psram-cache-issue
+esp32: LDFLAGS = $(FLAGS) -shared -T ../ld/esp32.ld
 
 OBJECTS =	\
 	native.o
