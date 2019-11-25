@@ -29,10 +29,10 @@ __attribute__ ((visibility ("default"))) bool module_unload();
 
 void low_load_module(low_context *ctx, const char *path, bool parent_on_stack);
 
-void low_call_thread(low_context *ctx, low_thread thread, int priority, void (*func)(void *userdata), void *userdata);
+void low_call_thread(low_context *ctx, low_thread thread, int priority, void (*func)(low_context *ctx, void *userdata), void *userdata);
 low_thread low_get_current_thread(low_context *ctx);
 
-int low_set_timeout(low_context *ctx, int index, int delay, void (*call)(void *data), void *data);
+int low_set_timeout(low_context *ctx, int index, int delay, void (*call)(low_context *ctx, void *userdata), void *userdata);
 void low_clear_timeout(low_context *ctx, int index);
 
 void low_call_next_tick(low_context *ctx, int num_args);
