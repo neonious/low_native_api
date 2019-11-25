@@ -6,7 +6,7 @@ Support library for native modules for low.js writting in C/C++. These modules c
 ## Documentation
 
 The full documentation can be found here:
-https://www.neonious.com/lowjs/documentation/lowjs-for-esp32-api.html
+https://www.neonious.com/lowjs/documentation/lowjs-native-api.html
 
 
 ## Example using a native module:
