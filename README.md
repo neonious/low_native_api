@@ -1,6 +1,12 @@
 # low_native_api
 
-API for native modules in low.js
+Support library for native modules for low.js writting in C/C++. These modules can be loaded by low.js programs, allowing the programs to be written in a mixture of JavaScript and C/C++.
+
+
+## Documentation
+
+The full documentation can be found here:
+https://www.neonious.com/lowjs/documentation/lowjs-for-esp32-api.html
 
 
 ## Example using a native module:
