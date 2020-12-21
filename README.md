@@ -10,7 +10,7 @@ https://www.neonious.com/lowjs/documentation/lowjs-native-api.html
 
 ## Example using a native module:
 
-### ON ESP32 MICROCONTROLLER
+### ON ESP32 MICROCONTROLLER OR LOW.JS SERVER WITH NEONIOUS IDE
 
 Step 1: Compile the native module:
 
@@ -25,7 +25,7 @@ Step 2:
 Copy index.js and native.so (compiled in Step 1) to microcontroller
 via lowsync or neonious IDE and run!
 
-### ON PC
+### ON PC WITH PLAIN LOW.JS
 
 Step 1: Compile the native module:
 
